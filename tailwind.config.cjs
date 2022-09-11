@@ -3,7 +3,11 @@ module.exports = {
   content: ["./src/**/*.{jsx, html, js, ts,}", "./src/**/*"],
   mode: "jit",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+				poppins: ["Poppins", "sans-serif"],
+			}
+    },
   },
   plugins: [],
 }
