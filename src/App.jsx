@@ -11,7 +11,7 @@ const App = () => {
       id: Math.ceil(Math.random() * 90),
       title: inputTitle,
       created_at: new Date().toLocaleString(),
-      completed: false
+      completed: false,
     });
 
     setTodos(newTodos);
@@ -21,9 +21,9 @@ const App = () => {
     <section className="flex justify-center h-screen">
       <div className="border border-gray-400 rounded p-10 w-[700px] mt-10 mb-10">
         <Header />
-        <Form addTodo={ addTodo } />
+        <Form addTodo={addTodo} />
         <Tabs />
-        <Todos todos={ todos } />
+        <Todos todos={todos} />
       </div>
     </section>
   );
