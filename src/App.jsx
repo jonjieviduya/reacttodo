@@ -7,14 +7,14 @@ import Todos from "./components/Todos";
 const App = () => {
   const [todos, setTodos] = useState([]);
   const addTodo = (inputTitle) => {
-    let newTodos = todos.push({
+    let newTodos = {
       id: Math.ceil(Math.random() * 90),
       title: inputTitle,
       created_at: new Date().toLocaleString(),
       completed: false,
-    });
+    };
 
-    setTodos(newTodos);
+    setTodos(todos => [...todos, newTodos]);
   };
 
   return (
