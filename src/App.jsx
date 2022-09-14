@@ -5,27 +5,23 @@ import Tabs from "./components/Tabs";
 import Todos from "./components/Todos";
 
 const App = () => {
+  const [todos, setTodos] = useState([]);
+  const addTodo = (inputTitle) => {
+    let newTodos = todos.push({
+      id: Math.ceil(Math.random() * 90),
+      title: inputTitle,
+      created_at: new Date().toLocaleString(),
+      completed: false
+    });
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: 'Go to the market.',
-      created_at: 'Sep 14, 2022',
-      completed: false
-    },
-    {
-      id: 2,
-      title: 'Agluto ti arak.',
-      created_at: 'Sep 14, 2022',
-      completed: false
-    }
-  ]);
+    setTodos(newTodos);
+  };
 
   return (
     <section className="flex justify-center h-screen">
       <div className="border border-gray-400 rounded p-10 w-[700px] mt-10 mb-10">
         <Header />
-        <Form />
+        <Form addTodo={ addTodo } />
         <Tabs />
         <Todos todos={ todos } />
       </div>
