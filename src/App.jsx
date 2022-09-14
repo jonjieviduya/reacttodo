@@ -14,7 +14,12 @@ const App = () => {
       completed: false,
     };
 
-    setTodos(todos => [...todos, newTodos]);
+    setTodos((todos) => [...todos, newTodos]);
+  };
+
+  const removeTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
   };
 
   return (
@@ -23,7 +28,7 @@ const App = () => {
         <Header />
         <Form addTodo={addTodo} />
         <Tabs />
-        <Todos todos={todos} />
+        <Todos todos={todos} removeTodo={removeTodo} />
       </div>
     </section>
   );
