@@ -1,6 +1,10 @@
 import React from "react";
 
-const Todo = ({ todo }) => {
+const Todo = (props) => {
+  const { todo, removeTodo } = props;
+  const removeHandler = (id) => {
+    removeTodo(id);
+  };
   return (
     <>
       <div className="flex flex-1 flex-col mb-3">
@@ -28,19 +32,15 @@ const Todo = ({ todo }) => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="flex flex-1 items-end justify-between text-sm">
-          {/* <p class="text-gray-500">Qty 1</p> */}
-
-          {/* <div class="flex">
             <button
-              type="button"
-              class="font-medium text-indigo-600 hover:text-indigo-500"
+              onClick={() => {
+                removeHandler(todo.id);
+              }}
+              className="hover:bg-red-400 group flex items-center rounded-md bg-red-700 text-white text-sm font-medium pl-2 pr-3 py-2 shadow-sm"
             >
               Remove
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
