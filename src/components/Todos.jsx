@@ -2,7 +2,7 @@ import React from "react";
 
 import Todo from "./Todo";
 
-const Todos = () => {
+const Todos = ({ todos }) => {
   return <Todo />;
 };
 
