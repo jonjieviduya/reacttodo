@@ -1,9 +1,9 @@
 import React from "react";
 
-const Todo = () => {
+const Todo = ({ todo }) => {
   return (
     <>
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col mb-3">
         <div className="shadow bg-white p-3">
           <div className="flex items-center gap-7">
             <input
@@ -14,7 +14,7 @@ const Todo = () => {
             ></input>
             <div>
               <div className="font-medium text-gray-900 p-0">
-                <span className="text-xl">To-do comps and prototype</span>
+                <span className="text-xl">{todo.title}</span>
               </div>
               <div className="flex items-center">
                 <img
@@ -24,9 +24,7 @@ const Todo = () => {
                 />
                 <div className="ml-4 flex-auto">
                   <div className="font-medium">Emily Selman</div>
-                  <div className="pt-0 text-slate-500">
-                    Created Sept 10, 2022
-                  </div>
+                  <div className="pt-0 text-slate-500">{todo.created_at}</div>
                 </div>
               </div>
             </div>
